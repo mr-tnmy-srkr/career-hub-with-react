@@ -116,7 +116,7 @@ const handleViewDetails = ()=>{
               {job.remote_or_onsite} job
             </span>
             <div>
-              <Link to={`job/${job.id}`}>
+              <Link to={`/job/${job.id}`}>
                 <div
                   //    onClick={handleViewDetails}
                   className="btn btn-primary"
