@@ -1,11 +1,10 @@
-import { json, useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   getStoredJobApplication,
   saveJobApplication,
 } from "../../utility/localStorage";
-import { useState } from "react";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -19,11 +18,11 @@ const JobDetails = () => {
 
   const handleApplyJob = () => {
     const storedJobApplication = getStoredJobApplication();
-    const isExist = storedJobApplication.find((jobId) => jobId === id);
+    const isExist = storedJobApplication.find((jobId) => jobId == id);
     if (isExist) {
       alert("already applied");
     } else {
-      saveJobApplication(id);
+      saveJobApplication(idInt);
 
       toast("job Applied", {
         position: "top-center",
