@@ -60,7 +60,7 @@ const FeaturedJobs = () => {
       </div>
       }
      {
-      dataLength === 4 &&  <div>
+      dataLength === 4 &&  <div className="text-center my-3">
         <button onClick={()=>setDataLength(jobs.length)} className="btn btn-primary">Show All Jobs</button>
       </div>
      }

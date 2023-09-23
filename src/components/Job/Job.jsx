@@ -1,8 +1,10 @@
 import { MdOutlineLocationOn } from "react-icons/md";
 import { BiDollarCircle } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -11,6 +13,11 @@ const Job = ({ job }) => {
     job_type,
     salary,
   } = job;
+
+ /*  const navigate = useNavigate();
+  const handleShowDetails = () => {
+   navigate(`/job/${id}`)
+  }; */
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -38,8 +45,11 @@ const Job = ({ job }) => {
               Salary : {salary}
             </h2>
           </div>
-          <div className="card-action">
-            <button className="btn btn-primary">View Details</button>
+          <div  className="card-action">
+            {/* <button className="btn btn-primary">View Details</button> */}
+            <Link to={`job/${id}`}>
+              <button className="btn btn-primary">View Details</button>
+           </Link>
           </div>
         </div>
       </div>
