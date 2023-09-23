@@ -9,7 +9,7 @@ const FeaturedJobs = () => {
   const [dataLength,setDataLength] = useState(4)
 
   const navigation = useNavigation();
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // const axios = require('axios');
   useEffect(() => {
@@ -21,17 +21,17 @@ const FeaturedJobs = () => {
       })
 
       .finally(() => {
-        setLoading(false);
+        // setLoading(false);
       });
     // }
     // fetchData();
   }, []);
 
-  console.log(jobs);
+  // console.log(jobs);
 
   return (
     <div>
-      <div>
+      <div className="space-y-3">
         <h2 className="text-5xl text-center">Featured Jobs</h2>
         <p className="text-center">
           Explore thousands of job opportunities with all the information you

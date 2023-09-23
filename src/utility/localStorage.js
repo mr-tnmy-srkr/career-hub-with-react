@@ -9,7 +9,7 @@ const getStoredJobApplication = () => {
 const saveJobApplication = (id) => {
   const storedJobApplication = getStoredJobApplication();
   const isExist = storedJobApplication.find((jobId) => jobId === id);
-//   console.log(isExist);
+  //   console.log(isExist);
   if (!isExist) {
     storedJobApplication.push(id);
     localStorage.setItem(
