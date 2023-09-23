@@ -6,6 +6,7 @@ import { BallTriangle } from "react-loader-spinner";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const [dataLength,setDataLength] = useState(4)
 
   const navigation = useNavigation();
   const [loading, setLoading] = useState(true);
@@ -52,12 +53,17 @@ const FeaturedJobs = () => {
           visible={true}
         /> : 
       
-      <div>
-        {jobs.map((job) => (
+      <div className="grid grid-cols-2 gap-6 mt-10">
+        {jobs.slice(0,dataLength).map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}
       </div>
       }
+     {
+      dataLength === 4 &&  <div>
+        <button onClick={()=>setDataLength(jobs.length)} className="btn btn-primary">Show All Jobs</button>
+      </div>
+     }
     </div>
   );
 };
