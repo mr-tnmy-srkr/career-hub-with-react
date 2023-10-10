@@ -18,6 +18,7 @@ const FeaturedJobs = () => {
       .get("data/jobs.json")
       .then((response) => {
         setJobs(response.data);
+        console.log(response.data);
       })
 
       .finally(() => {
@@ -47,7 +48,7 @@ const FeaturedJobs = () => {
           width={100}
           radius={5}
           color="#4fa94d"
-          ariaLabel="ball-triangle-loading"
+          ariaLabel="ball-triangle-loading"navigation
           wrapperClass={{}}
           wrapperStyle=""
           visible={true}

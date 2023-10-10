@@ -5,6 +5,7 @@ import {
   getStoredJobApplication,
   saveJobApplication,
 } from "../../utility/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -39,6 +40,9 @@ const JobDetails = () => {
 
   return (
     <div className="my-8">
+    <Helmet>
+      <title>Job Details : {id}</title>
+    </Helmet>
       <h2 className="text-center text-3xl py-6 bg-[#f4e779]">
         Job details of id no : {id}
       </h2>
